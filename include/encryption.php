@@ -16,7 +16,12 @@ class encryption
 	{
 		return substr(sha1(mt_rand()),0,22);
 	}
-	
+
+	public static function hash($password)
+	{
+		return crypt($password, self::$algo.self::$cost.'$'.self::unique_salt());
+	}
+
 }
 
 ?>
