@@ -4,6 +4,19 @@
 @author: Alvaro Home <xzero7>
 
 @purpose: Class that will handle encrypting passwords
+			Will be using sha1 encryption
 */
+
+class encryption
+{
+	private static $algo = '$2a';
+	private static $cost = '$10';
+
+	private static function unique_salt()
+	{
+		return substr(sha1(mt_rand()),0,22);
+	}
+	
+}
 
 ?>
