@@ -12,7 +12,7 @@ class Database
 	private $host = "127.0.0.1"; // change to your own default values
 	private $user = "root"; // change to your own default values
 	private $password = "MYSECRET"; // change to your own default values
-	private $db = "mySportsPage";
+	private $db = "OrgFeed";
 	private $mysqli;
 	
 	/*
