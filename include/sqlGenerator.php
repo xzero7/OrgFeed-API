@@ -15,9 +15,21 @@
 		-true  - if user already exists
 		-false - user does not exist
 */
-private function userExists($email, $db)
+private function userExists($email)
 {
-	
-}
+	$query = "Select * FROM Users Where email='".$email."'";
+
+	//run query
+	$result = $db->sendSQL($query);
+	$row = $db->nextRow();
+
+	if($row == null)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 
 ?>
