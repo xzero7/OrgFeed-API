@@ -8,8 +8,11 @@
 
 
 include_once('connectDB.php');
+include_once('responseCodes.php');
 
-
+/*
+	db-is the DB object to handle mysqli calls
+*/
 private $db;
 
 function __construct()
