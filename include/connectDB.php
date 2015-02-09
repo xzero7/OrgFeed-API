@@ -100,6 +100,7 @@ class Database
 	*/
 	public function sendSQL($sql)
 	{
+		$response = array();
 		if(!isset($this->mysqli))
 			$this->connect();
 		
@@ -111,11 +112,15 @@ class Database
 				throw new Exception("Could not send query");
 		} catch (Exception $e)
 		{
-			echo $e->getMessage()."<BR>";
-			echo $this->mysqli->error;
-			exit;
+			$response['pass'] = false;
+			$response['message'] = $e->getMessage();
+			$response['error'] = $this->mysqli->error;
+
+			return $response;
 		}
-		return $this->result;
+		$response['pass'] = true;
+		$response['data'] = $this->result;
+		return $response;
 	}
 	
 	/*
