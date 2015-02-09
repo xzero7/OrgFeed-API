@@ -6,6 +6,18 @@
 @purpose: Create sql statments per DB table
 */
 
+
+include_once('connectDB.php');
+
+
+private $db;
+
+function __construct()
+{
+	$db = new Database();
+	$db->connect();
+}
+
 /*
 	@purpose- will check if suggested user exist by verifying email
 	@params
@@ -44,7 +56,7 @@ private function userExists($email)
 */
 public function createUser($email, $password, $firstName, $lastName)
 {
-	
+
 }
 
 ?>
