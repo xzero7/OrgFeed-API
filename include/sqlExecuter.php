@@ -26,10 +26,25 @@ private function userExists($email)
 	if($row == null)
 	{
 		return false;
-	}
+	} 
 	else
 	{
 		return true;
 	}
+}
+
+/*
+	@purpose- will check if suggested user exist by verifying email
+	@params
+		-email - the email being checked
+		-db    - the db instance class to execute sql
+	@return
+		-true  - if user already exists
+		-false - user does not exist
+*/
+public function createUser($email, $password, $firstName, $lastName)
+{
+	
+}
 
 ?>
